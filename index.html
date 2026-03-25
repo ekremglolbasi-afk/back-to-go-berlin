@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Back To Go | Bäckerei & Café in Berlin</title>
+    <title>Back To Go | Nuri Gölbasi - Berlin</title>
     <style>
-        /* --- FARBEN & GRUNDEINSTELLUNGEN --- */
         :root {
-            --rot: #e63946;      /* Helles, appetitliches Rot */
-            --braun: #8b5a2b;    /* Klassisches Kaffeebraun */
-            --schwarz: #1d1d1b;  /* Weiches Schwarz für guten Lesekontrast */
+            --rot: #e63946;      
+            --braun: #6d4c41;    /* Schönes Kaffeebraun */
+            --schwarz: #1d1d1b;  
             --weiss: #ffffff;
-            --hintergrund: #fcfaf8; /* Ganz leichtes Creme-Weiß */
+            --hintergrund: #fdfaf7; 
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
             color: var(--schwarz);
@@ -23,130 +22,144 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
-            font-family: 'Georgia', serif; /* Klassische Schriftart für Überschriften */
-            color: var(--braun);
-        }
-
-        /* --- HEADER & NAVIGATION --- */
+        /* Navigation */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
+            padding: 15px 5%;
             background-color: var(--weiss);
             border-bottom: 4px solid var(--rot);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 26px;
+            font-weight: 800;
             color: var(--schwarz);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
-        .logo span {
-            color: var(--rot);
-        }
+        .logo span { color: var(--rot); }
 
         .lang-switch a {
             text-decoration: none;
             color: var(--schwarz);
             font-weight: bold;
-            padding: 5px 10px;
-            border: 1px solid var(--schwarz);
-            border-radius: 3px;
+            padding: 8px 15px;
+            border: 2px solid var(--rot);
+            border-radius: 20px;
             transition: 0.3s;
         }
 
         .lang-switch a:hover {
             background-color: var(--rot);
             color: var(--weiss);
-            border-color: var(--rot);
         }
 
-        /* --- HERO BEREICH (Startbildschirm) --- */
+        /* Hero Bereich mit deinem Laden-Bild */
         .hero {
             text-align: center;
-            padding: 80px 20px;
-            background-color: var(--braun);
-            color: var(--weiss);
-            /* Hier kannst du später ein echtes Hintergrundbild einfügen */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1200x400/8b5a2b/ffffff?text=Hier+kommt+euer+Laden-Foto+hin');
+            padding: 120px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('ladenfront.jpg');
             background-size: cover;
             background-position: center;
+            color: var(--weiss);
         }
 
         .hero h1 {
-            color: var(--weiss);
-            font-size: 40px;
+            font-size: 3rem;
             margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero p {
-            font-size: 20px;
-            max-width: 600px;
+            font-size: 1.4rem;
+            max-width: 800px;
             margin: 0 auto;
+            font-weight: 300;
         }
 
-        /* --- SORTIMENT (Produkte) --- */
-        .sortiment-section {
-            padding: 50px 5%;
+        /* Sortiment */
+        .section-title {
             text-align: center;
+            margin-top: 50px;
+            font-size: 2.5rem;
+            color: var(--braun);
         }
 
-        .grid-container {
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 50px;
+        }
+
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .card {
             background: var(--weiss);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            border-top: 3px solid var(--rot);
-            text-align: left;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-bottom: 5px solid var(--braun);
         }
+
+        .card:hover { transform: translateY(-5px); }
 
         .card img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 15px;
         }
 
-        .card h3 {
+        .card-content { padding: 20px; }
+
+        .card-content h3 {
             margin-top: 0;
-            color: var(--schwarz);
+            color: var(--rot);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
         }
 
-        ul {
-            padding-left: 20px;
-        }
-
-        /* --- FOOTER (Kontakt & Öffnungszeiten) --- */
+        /* Kontakt & Info */
         footer {
             background-color: var(--schwarz);
             color: var(--weiss);
-            padding: 40px 5%;
+            padding: 50px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        footer h3 { color: var(--rot); margin-bottom: 20px; }
+        footer p { margin: 5px 0; font-size: 0.95rem; }
+
+        .opening-hours {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .opening-hours div {
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
-            gap: 20px;
+            padding: 3px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        footer h3 {
-            color: var(--rot);
-        }
-
-        .footer-box {
-            flex: 1;
-            min-width: 250px;
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -155,72 +168,73 @@
     <header>
         <div class="logo">Back <span>To Go</span></div>
         <div class="lang-switch">
-            <a href="index.html">DE</a> | <a href="en.html">EN</a>
+            <a href="en.html">English</a>
         </div>
     </header>
 
     <section class="hero">
         <h1>Dein perfekter Start in den Tag</h1>
-        <p>Vom herzhaften Frühstück bis zum süßen Lieblingsgebäck – frisches Handwerk bei Back To Go in Berlin.</p>
+        <p>Frisches Handwerk, herzhaftes Frühstück und bester Kaffee bei Back To Go Berlin.</p>
     </section>
 
-    <section class="sortiment-section">
-        <h2>Unser Sortiment</h2>
-        <p>Täglich frisch für dich gebacken und zubereitet.</p>
-
-        <div class="grid-container">
+    <div class="container">
+        <h2 class="section-title">Unser Sortiment</h2>
+        
+        <div class="grid">
             <div class="card">
-                <img src="https://placehold.co/400x300/e63946/ffffff?text=Brot+%26+Broetchen" alt="Frische Brötchen">
-                <h3>Frische Backwaren</h3>
-                <p><strong>Brötchen:</strong> Schrippen, Kürbis, Weltmeister, Kartoffel, Mehrkorn, Roggen, Dinkel, Mohn, Sesam.</p>
-                <p><strong>Laugengebäck:</strong> Brezeln, Stangen, Ecken.</p>
-                <p><strong>Brote:</strong> Verschiedene Sorten sowie Baguettes (lang & kurz).</p>
+                <img src="brot.jpg" alt="Frische Brötchen">
+                <div class="card-content">
+                    <h3>Frische Backwaren</h3>
+                    <p><strong>Brötchen:</strong> Schrippen, Kürbis, Weltmeister, Kartoffel, Mehrkorn, Roggen, Dinkel, Mohn, Sesam.</p>
+                    <p><strong>Laugen:</strong> Brezeln, Stangen, Dreiecke.</p>
+                    <p><strong>Brote:</strong> Große Auswahl & Baguettes (lang/kurz).</p>
+                </div>
             </div>
 
             <div class="card">
-                <img src="https://placehold.co/400x300/e63946/ffffff?text=Suesses+%26+Snacks" alt="Süßes und Snacks">
-                <h3>Süßes & Snacks</h3>
-                <p><strong>Croissants:</strong> Natur, Schoko, Vanille, Nuss-Nougat, Aprikose.</p>
-                <p><strong>Süßwaren:</strong> Schokobrötchen, Apfeltasche, Franzbrötchen, Rosinenschnecke, Donut, Spritzkuchen, Berliner, Waffeln.</p>
-                <p><strong>Herzhaftes:</strong> Börek, Minipizza.</p>
+                <img src="snacks.jpg" alt="Süßwaren">
+                <div class="card-content">
+                    <h3>Süßes & Snacks</h3>
+                    <p><strong>Croissants:</strong> Schoko, Vanille, Nuss-Nougat, Aprikose.</p>
+                    <p><strong>Gebäck:</strong> Franzbrötchen, Schokobrötchen, Apfeltasche, Rosinenschnecke, Donut, Spritzkuchen, Berliner, Waffeln.</p>
+                    <p><strong>Herzhaft:</strong> Börek, Minipizza.</p>
+                </div>
             </div>
 
             <div class="card">
-                <img src="https://placehold.co/400x300/e63946/ffffff?text=Fruehstueck" alt="Frühstück">
-                <h3>Frühstück</h3>
-                <p>Starte lecker in den Tag mit unseren frisch belegten Brötchen nach Wahl.</p>
-                <p><strong>Warmes Frühstück:</strong> Frisch zubereitetes Rührei oder Spiegelei – auf Wunsch auch gerne mit würziger Sucuk.</p>
+                <img src="fruehstueck.jpg" alt="Frühstück">
+                <div class="card-content">
+                    <h3>Frühstück & Snacks</h3>
+                    <p>Täglich frisch belegte Brötchen nach Wahl.</p>
+                    <p><strong>Warm:</strong> Frisches Rührei oder Spiegelei, auch mit würziger <strong>Sucuk</strong> serviert.</p>
+                </div>
             </div>
 
             <div class="card">
-                <img src="https://placehold.co/400x300/e63946/ffffff?text=Echter+Kaffee" alt="Kaffee">
-                <h3>Echte Kaffeekultur</h3>
-                <p>Kein Automatenkaffee! Wir bereiten deinen Kaffee frisch an der echten Siebträgermaschine zu.</p>
-                <ul>
-                    <li>Espresso</li>
-                    <li>Cappuccino</li>
-                    <li>Latte Macchiato</li>
-                    <li>Milchkaffee</li>
-                    <li>Kakao</li>
-                </ul>
+                <img src="kaffee.jpg" alt="Echter Kaffee">
+                <div class="card-content">
+                    <h3>Echte Kaffeekultur</h3>
+                    <p>Genieße Kaffeespezialitäten aus unserer <strong>echten Siebträgermaschine</strong> (kein Automat!):</p>
+                    <p>Espresso, Cappuccino, Latte Macchiato, Milchkaffee, Kakao und mehr.</p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <footer>
-        <div class="footer-box">
-            <h3>Back To Go</h3>
-            <p>Nuri Gölbasi<br>
-            Brunnenstraße 152<br>
-            10115 Berlin</p>
-            <p>📞 <strong>Telefon:</strong> [DEINE NUMMER HIER]</p>
+        <div>
+            <h3>Kontakt</h3>
+            <p><strong>Inhaber:</strong> Nuri Gölbasi</p>
+            <p>Brunnenstraße 152</p>
+            <p>10115 Berlin</p>
+            <p style="margin-top:15px;">📞 Telefon: [Hier Nummer eintragen]</p>
         </div>
-        
-        <div class="footer-box">
+
+        <div class="opening-hours">
             <h3>Öffnungszeiten</h3>
-            <p><strong>Mo - Fr:</strong> 06:00 – 17:00 Uhr</p>
-            <p><strong>Samstag:</strong> 07:00 – 16:00 Uhr</p>
-            <p><strong>Sonntag:</strong> Geschlossen</p>
+            <div><span>Montag - Freitag:</span> <span>06:00 – 17:00</span></div>
+            <div><span>Samstag:</span> <span>07:00 – 16:00</span></div>
+            <div><span>Sonntag:</span> <span>Geschlossen</span></div>
         </div>
     </footer>
 
