@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back To Go | Bäckerei & Café in Berlin</title>
+    <style>
+        /* --- FARBEN & GRUNDEINSTELLUNGEN --- */
+        :root {
+            --rot: #e63946;      /* Helles, appetitliches Rot */
+            --braun: #8b5a2b;    /* Klassisches Kaffeebraun */
+            --schwarz: #1d1d1b;  /* Weiches Schwarz für guten Lesekontrast */
+            --weiss: #ffffff;
+            --hintergrund: #fcfaf8; /* Ganz leichtes Creme-Weiß */
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--schwarz);
+            background-color: var(--hintergrund);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Georgia', serif; /* Klassische Schriftart für Überschriften */
+            color: var(--braun);
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: var(--weiss);
+            border-bottom: 4px solid var(--rot);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--schwarz);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--rot);
+        }
+
+        .lang-switch a {
+            text-decoration: none;
+            color: var(--schwarz);
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 1px solid var(--schwarz);
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .lang-switch a:hover {
+            background-color: var(--rot);
+            color: var(--weiss);
+            border-color: var(--rot);
+        }
+
+        /* --- HERO BEREICH (Startbildschirm) --- */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: var(--braun);
+            color: var(--weiss);
+            /* Hier kannst du später ein echtes Hintergrundbild einfügen */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1200x400/8b5a2b/ffffff?text=Hier+kommt+euer+Laden-Foto+hin');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            color: var(--weiss);
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- SORTIMENT (Produkte) --- */
+        .sortiment-section {
+            padding: 50px 5%;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--weiss);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--rot);
+            text-align: left;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--schwarz);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        /* --- FOOTER (Kontakt & Öffnungszeiten) --- */
+        footer {
+            background-color: var(--schwarz);
+            color: var(--weiss);
+            padding: 40px 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        footer h3 {
+            color: var(--rot);
+        }
+
+        .footer-box {
+            flex: 1;
+            min-width: 250px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Back <span>To Go</span></div>
+        <div class="lang-switch">
+            <a href="index.html">DE</a> | <a href="en.html">EN</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Dein perfekter Start in den Tag</h1>
+        <p>Vom herzhaften Frühstück bis zum süßen Lieblingsgebäck – frisches Handwerk bei Back To Go in Berlin.</p>
+    </section>
+
+    <section class="sortiment-section">
+        <h2>Unser Sortiment</h2>
+        <p>Täglich frisch für dich gebacken und zubereitet.</p>
+
+        <div class="grid-container">
+            <div class="card">
+                <img src="https://placehold.co/400x300/e63946/ffffff?text=Brot+%26+Broetchen" alt="Frische Brötchen">
+                <h3>Frische Backwaren</h3>
+                <p><strong>Brötchen:</strong> Schrippen, Kürbis, Weltmeister, Kartoffel, Mehrkorn, Roggen, Dinkel, Mohn, Sesam.</p>
+                <p><strong>Laugengebäck:</strong> Brezeln, Stangen, Ecken.</p>
+                <p><strong>Brote:</strong> Verschiedene Sorten sowie Baguettes (lang & kurz).</p>
+            </div>
+
+            <div class="card">
+                <img src="https://placehold.co/400x300/e63946/ffffff?text=Suesses+%26+Snacks" alt="Süßes und Snacks">
+                <h3>Süßes & Snacks</h3>
+                <p><strong>Croissants:</strong> Natur, Schoko, Vanille, Nuss-Nougat, Aprikose.</p>
+                <p><strong>Süßwaren:</strong> Schokobrötchen, Apfeltasche, Franzbrötchen, Rosinenschnecke, Donut, Spritzkuchen, Berliner, Waffeln.</p>
+                <p><strong>Herzhaftes:</strong> Börek, Minipizza.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://placehold.co/400x300/e63946/ffffff?text=Fruehstueck" alt="Frühstück">
+                <h3>Frühstück</h3>
+                <p>Starte lecker in den Tag mit unseren frisch belegten Brötchen nach Wahl.</p>
+                <p><strong>Warmes Frühstück:</strong> Frisch zubereitetes Rührei oder Spiegelei – auf Wunsch auch gerne mit würziger Sucuk.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://placehold.co/400x300/e63946/ffffff?text=Echter+Kaffee" alt="Kaffee">
+                <h3>Echte Kaffeekultur</h3>
+                <p>Kein Automatenkaffee! Wir bereiten deinen Kaffee frisch an der echten Siebträgermaschine zu.</p>
+                <ul>
+                    <li>Espresso</li>
+                    <li>Cappuccino</li>
+                    <li>Latte Macchiato</li>
+                    <li>Milchkaffee</li>
+                    <li>Kakao</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-box">
+            <h3>Back To Go</h3>
+            <p>Nuri Gölbasi<br>
+            Brunnenstraße 152<br>
+            10115 Berlin</p>
+            <p>📞 <strong>Telefon:</strong> [DEINE NUMMER HIER]</p>
+        </div>
+        
+        <div class="footer-box">
+            <h3>Öffnungszeiten</h3>
+            <p><strong>Mo - Fr:</strong> 06:00 – 17:00 Uhr</p>
+            <p><strong>Samstag:</strong> 07:00 – 16:00 Uhr</p>
+            <p><strong>Sonntag:</strong> Geschlossen</p>
+        </div>
+    </footer>
+
+</body>
+</html>
