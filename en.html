@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back To Go | Bakery & Café in Berlin</title>
+    <style>
+        /* Gleiches Design wie in der index.html */
+        :root { --rot: #e63946; --braun: #8b5a2b; --schwarz: #1d1d1b; --weiss: #ffffff; --hintergrund: #fcfaf8; }
+        body { font-family: Arial, sans-serif; margin: 0; color: var(--schwarz); background-color: var(--hintergrund); line-height: 1.6; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: var(--weiss); border-bottom: 4px solid var(--rot); }
+        .logo { font-size: 24px; font-weight: bold; text-transform: uppercase; }
+        .logo span { color: var(--rot); }
+        .lang-switch a { text-decoration: none; color: var(--schwarz); font-weight: bold; padding: 5px 10px; border: 1px solid var(--schwarz); }
+        .hero { text-align: center; padding: 80px 20px; background-color: var(--braun); color: var(--weiss); background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://placehold.co/1200x400/8b5a2b/ffffff?text=Bakery+Photo'); background-size: cover; }
+        .sortiment-section { padding: 50px 5%; text-align: center; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: var(--weiss); padding: 20px; border-radius: 8px; border-top: 3px solid var(--rot); text-align: left; }
+        footer { background-color: var(--schwarz); color: var(--weiss); padding: 40px 5%; display: flex; flex-wrap: wrap; justify-content: space-between; }
+        footer h3 { color: var(--rot); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Back <span>To Go</span></div>
+        <div class="lang-switch"><a href="index.html">DE</a> | <a href="en.html">EN</a></div>
+    </header>
+    <section class="hero">
+        <h1>Your perfect start to the day</h1>
+        <p>From hearty breakfast to your favorite sweet pastry – fresh craftsmanship at Back To Go in Berlin.</p>
+    </section>
+    <section class="sortiment-section">
+        <h2>Our Selection</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Fresh Baked Goods</h3>
+                <p>Rolls (Pumpkin, Multigrain, Rye, Spelt, Poppy, Sesame), Pretzels, Lye sticks, Baguettes and fresh Bread.</p>
+            </div>
+            <div class="card">
+                <h3>Sweets & Snacks</h3>
+                <p>Croissants (Choco, Vanilla, Nougat, Apricot), Apple turnover, Donuts, Waffles, "Franzbrötchen", and Mini Pizza / Börek.</p>
+            </div>
+            <div class="card">
+                <h3>Breakfast</h3>
+                <p>Freshly made scrambled or fried eggs – also available with spicy Sucuk. Plus a wide variety of sandwiches.</p>
+            </div>
+            <div class="card">
+                <h3>Real Coffee Culture</h3>
+                <p>No vending machines! We use a real portafilter machine for Espresso, Cappuccino, Latte Macchiato and more.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <h3>Back To Go</h3>
+            <p>Nuri Gölbasi<br>Brunnenstraße 152, 10115 Berlin</p>
+        </div>
+        <div>
+            <h3>Opening Hours</h3>
+            <p>Mon - Fri: 06:00 – 17:00<br>Sat: 07:00 – 16:00<br>Sun: Closed</p>
+        </div>
+    </footer>
+</body>
+</html>
