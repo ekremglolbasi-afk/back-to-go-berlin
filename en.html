@@ -3,62 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Back To Go | Bakery & Café in Berlin</title>
+    <title>Back To Go | Nuri Gölbasi - Berlin | Bakery & Café</title>
     <style>
-        /* Gleiches Design wie in der index.html */
-        :root { --rot: #e63946; --braun: #8b5a2b; --schwarz: #1d1d1b; --weiss: #ffffff; --hintergrund: #fcfaf8; }
-        body { font-family: Arial, sans-serif; margin: 0; color: var(--schwarz); background-color: var(--hintergrund); line-height: 1.6; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: var(--weiss); border-bottom: 4px solid var(--rot); }
-        .logo { font-size: 24px; font-weight: bold; text-transform: uppercase; }
+        /* --- EXAKT GLEICHES DESIGN WIE IN DER index.html --- */
+        :root {
+            --rot: #e63946;      
+            --braun: #6d4c41;    /* Rich coffee brown */
+            --schwarz: #1d1d1b;  
+            --weiss: #ffffff;
+            --hintergrund: #fdfaf7; /* Very light cream */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--schwarz);
+            background-color: var(--hintergrund);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: var(--weiss);
+            border-bottom: 4px solid var(--rot);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--schwarz);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .logo span { color: var(--rot); }
-        .lang-switch a { text-decoration: none; color: var(--schwarz); font-weight: bold; padding: 5px 10px; border: 1px solid var(--schwarz); }
-        .hero { text-align: center; padding: 80px 20px; background-color: var(--braun); color: var(--weiss); background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://placehold.co/1200x400/8b5a2b/ffffff?text=Bakery+Photo'); background-size: cover; }
-        .sortiment-section { padding: 50px 5%; text-align: center; }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card { background: var(--weiss); padding: 20px; border-radius: 8px; border-top: 3px solid var(--rot); text-align: left; }
-        footer { background-color: var(--schwarz); color: var(--weiss); padding: 40px 5%; display: flex; flex-wrap: wrap; justify-content: space-between; }
-        footer h3 { color: var(--rot); }
+
+        .lang-switch a {
+            text-decoration: none;
+            color: var(--schwarz);
+            font-weight: bold;
+            padding: 8px 15px;
+            border: 2px solid var(--rot);
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .lang-switch a:hover {
+            background-color: var(--rot);
+            color: var(--weiss);
+        }
+
+        /* Hero Section with your shop image */
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('ladenfront.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--weiss);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Selection */
+        .section-title {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 2.5rem;
+            color: var(--braun);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 50px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: var(--weiss);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-bottom: 5px solid var(--braun);
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-content { padding: 20px; }
+
+        .card-content h3 {
+            margin-top: 0;
+            color: var(--rot);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* Contact & Info */
+        footer {
+            background-color: var(--schwarz);
+            color: var(--weiss);
+            padding: 50px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        footer h3 { color: var(--rot); margin-bottom: 20px; }
+        footer p { margin: 5px 0; font-size: 0.95rem; }
+
+        .opening-hours {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .opening-hours div {
+            display: flex;
+            justify-content: space-between;
+            padding: 3px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
+
     <header>
         <div class="logo">Back <span>To Go</span></div>
-        <div class="lang-switch"><a href="index.html">DE</a> | <a href="en.html">EN</a></div>
+        <div class="lang-switch">
+            <a href="index.html">Deutsch</a>
+        </div>
     </header>
+
     <section class="hero">
-        <h1>Your perfect start to the day</h1>
-        <p>From hearty breakfast to your favorite sweet pastry – fresh craftsmanship at Back To Go in Berlin.</p>
+        <h1>Your Perfect Start to the Day</h1>
+        <p>Fresh craftsmanship, hearty breakfast, and the best coffee at Back To Go Berlin.</p>
     </section>
-    <section class="sortiment-section">
-        <h2>Our Selection</h2>
-        <div class="grid-container">
+
+    <div class="container">
+        <h2 class="section-title">Our Selection</h2>
+        
+        <div class="grid">
             <div class="card">
-                <h3>Fresh Baked Goods</h3>
-                <p>Rolls (Pumpkin, Multigrain, Rye, Spelt, Poppy, Sesame), Pretzels, Lye sticks, Baguettes and fresh Bread.</p>
+                <img src="brot.jpg" alt="Fresh baked rolls and bread">
+                <div class="card-content">
+                    <h3>Fresh Baked Goods</h3>
+                    <p><strong>Rolls:</strong> Classic 'Schrippen', Pumpkin seed, 'Weltmeister', Potato, Multigrain, Rye, Spelt, Poppy seed, Sesame.</p>
+                    <p><strong>Pretzels:</strong> Traditional pretzels, lye sticks, pretzel triangles.</p>
+                    <p><strong>Bread:</strong> Wide variety of artisanal loaves & baguettes (long/short).</p>
+                </div>
             </div>
+
             <div class="card">
-                <h3>Sweets & Snacks</h3>
-                <p>Croissants (Choco, Vanilla, Nougat, Apricot), Apple turnover, Donuts, Waffles, "Franzbrötchen", and Mini Pizza / Börek.</p>
+                <img src="snacks.jpg" alt="Sweet pastries and savory snacks">
+                <div class="card-content">
+                    <h3>Sweets & Snacks</h3>
+                    <p><strong>Croissants:</strong> Chocolate, Vanilla, Nut-Nougat, Apricot jam.</p>
+                    <p><strong>Pastries:</strong> 'Franzbrötchen', Chocolate buns, Apple turnovers, Raisin snails, Donuts, 'Spritzkuchen', 'Berliner' donuts, Waffles.</p>
+                    <p><strong>Savory:</strong> Börek (spinach/cheese), mini pizzas.</p>
+                </div>
             </div>
+
             <div class="card">
-                <h3>Breakfast</h3>
-                <p>Freshly made scrambled or fried eggs – also available with spicy Sucuk. Plus a wide variety of sandwiches.</p>
+                <img src="fruehstueck.jpg" alt="Breakfast with Sucuk and eggs">
+                <div class="card-content">
+                    <h3>Breakfast & Snacks</h3>
+                    <p>Daily fresh made-to-order sandwiches (belegte Brötchen).</p>
+                    <p><strong>Hot Breakfast:</strong> Freshly prepared scrambled or fried eggs, also served with spicy <strong>Sucuk</strong> sausage.</p>
+                </div>
             </div>
+
             <div class="card">
-                <h3>Real Coffee Culture</h3>
-                <p>No vending machines! We use a real portafilter machine for Espresso, Cappuccino, Latte Macchiato and more.</p>
+                <img src="kaffee.jpg" alt="Real portafilter coffee machine">
+                <div class="card-content">
+                    <h3>Real Coffee Culture</h3>
+                    <p>Enjoy premium coffee specialties from our <strong>authentic portafilter machine</strong> (not a vending machine!):</p>
+                    <p>Espresso, Cappuccino, Latte Macchiato, Café au Lait, Hot Chocolate, and more.</p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+
     <footer>
         <div>
-            <h3>Back To Go</h3>
-            <p>Nuri Gölbasi<br>Brunnenstraße 152, 10115 Berlin</p>
+            <h3>Contact</h3>
+            <p><strong>Owner:</strong> Nuri Gölbasi</p>
+            <p>Brunnenstraße 152</p>
+            <p>10115 Berlin, Germany</p>
+            <p style="margin-top:15px;">📞 Phone: [Add phone number here]</p>
         </div>
-        <div>
+
+        <div class="opening-hours">
             <h3>Opening Hours</h3>
-            <p>Mon - Fri: 06:00 – 17:00<br>Sat: 07:00 – 16:00<br>Sun: Closed</p>
+            <div><span>Monday - Friday:</span> <span>06:00 AM – 05:00 PM</span></div>
+            <div><span>Saturday:</span> <span>07:00 AM – 04:00 PM</span></div>
+            <div><span>Sunday:</span> <span>Closed</span></div>
         </div>
     </footer>
+
 </body>
 </html>
